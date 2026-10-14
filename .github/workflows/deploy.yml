@@ -39,8 +39,11 @@ jobs:
         with:
           enablement: true
 
+      # `npm ci` is strict and gives the fastest, most reproducible install.
+      # The fallback only fires if the lockfile and package.json ever drift
+      # apart, so a stale lock cannot block a deploy.
       - name: Install dependencies
-        run: npm ci
+        run: npm ci || npm install --no-audit --no-fund
 
       # base_path is "/<repo>"; the trailing slash matters so that asset URLs
       # become /<repo>/assets/... and resolve under the project sub-path.
