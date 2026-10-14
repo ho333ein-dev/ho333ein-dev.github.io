@@ -1,0 +1,31 @@
+# dependencies
+node_modules
+
+# build output (the Action rebuilds it, gh-pages pushes it)
+dist
+dist-ssr
+
+# local preview / tooling state
+.accio
+.accio-site.json
+.vite
+
+# env
+.env
+.env.local
+.env.*.local
+
+# editor / OS noise
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-error.log*
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# local backups - never part of the build (any depth)
+*.bak
+*.bak3
+*.bak-*
